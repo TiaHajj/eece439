@@ -1,0 +1,17 @@
+{% extends 'crud/default.html' %}
+{% block title %}Delete a contact in the Database{% endblock %}
+{% block content %}
+<h1>Delete a contact </h1>
+<form method="post"> 
+    {% csrf_token %}
+
+    {{form.as_p}}
+
+<button type="submit" name="submit">Delete</button>
+</form>
+{% if message %}
+<p>{{message}}</p>
+{% endif %}
+
+
+{% endblock %}

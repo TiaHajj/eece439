@@ -1,0 +1,19 @@
+{% extends 'crud/default.html' %}
+
+{% block title %}Create Contact in the Database{% endblock %}
+{% block content %}
+<h1>Create Contact in the Database</h1>
+<form method="post"> 
+    {% csrf_token %}
+
+    {{form.as_p}}
+
+
+<button type="submit" name="submit">Create</button>
+</form>
+{% if message %}
+<p>{{message}}</p>
+{% endif %}
+{% endblock %}
+
+

@@ -1,0 +1,27 @@
+{% extends 'crud/default.html' %}
+{% block title %}Read a contact in the Database{% endblock %}
+{% block content %}
+<h1>Search the contact you would like to read</h1>
+<form method="post"> 
+    {% csrf_token %}
+
+    {{form.as_p}}
+
+
+
+<button type="submit" name="submit">Read</button>
+</form>
+{% if message %}
+<p>{{message}}</p>
+{% endif %}
+{% if name %}
+<ul>
+    <li>{{name}}</li>
+    <li>{{email}}</li>
+    <li>{{phone}}</li>
+    <li>{{address}}</li>
+    <li>{{profession}}</li>
+</ul>
+{% endif %}
+
+{% endblock %}
